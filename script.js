@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     intro.style.opacity = '0';
     setTimeout(() => {
       intro.style.display = 'none';
+      revealSections();
     }, 1000);
   }, 2500);
 });
@@ -25,5 +26,3 @@ function revealSections() {
     }, 500 * index);
   });
 }
-
-window.addEventListener('load', revealSections);
