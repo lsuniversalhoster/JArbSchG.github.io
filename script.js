@@ -1,9 +1,9 @@
-function revealSectionsSmoothly() {
+function revealSectionsOnLoad() {
   const sections = document.querySelectorAll('section');
+  const screenHeight = window.innerHeight;
 
   sections.forEach((section, index) => {
     const topPosition = section.getBoundingClientRect().top + window.scrollY;
-    const screenHeight = window.innerHeight;
 
     if (topPosition < screenHeight) {
       section.style.opacity = '0';
@@ -22,5 +22,9 @@ function revealSectionsSmoothly() {
   });
 }
 
-window.addEventListener('load', revealSectionsSmoothly);
-window.addEventListener('scroll', revealSectionsSmoothly);
+if (!sessionStorage.getItem('hasVisited')) {
+  window.addEventListener('load', () => {
+    revealSectionsOnLoad();
+    sessionStorage.setItem('hasVisited', true);
+  });
+}
