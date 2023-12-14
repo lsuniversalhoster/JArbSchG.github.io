@@ -22,9 +22,6 @@ function revealPageOnLoad() {
   });
 }
 
-if (!sessionStorage.getItem('hasVisited')) {
-  window.addEventListener('load', () => {
-    revealPageOnLoad();
-    sessionStorage.setItem('hasVisited', true);
-  });
-}
+window.addEventListener('load', () => {
+  revealPageOnLoad();
+});
