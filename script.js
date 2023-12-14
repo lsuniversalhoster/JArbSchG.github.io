@@ -2,17 +2,17 @@ window.addEventListener('load', () => {
   const intro = document.querySelector('.intro');
   const introText = document.getElementById('intro-text');
   const bodyBlur = document.querySelector('body::before');
+  const header = document.querySelector('header');
 
   setTimeout(() => {
-    introText.style.transform = 'scale(1)';
-  }, 500);
-
-  setTimeout(() => {
-    bodyBlur.style.filter = 'blur(0)';
-    intro.style.opacity = '0';
+    introText.style.opacity = '0';
     setTimeout(() => {
-      intro.style.display = 'none';
-      revealSections(); 
+      header.style.opacity = '0';
+      bodyBlur.style.filter = 'blur(10px)';
+      setTimeout(() => {
+        intro.style.display = 'none';
+        revealSections();
+      }, 1000);
     }, 1000);
   }, 5000);
 });
