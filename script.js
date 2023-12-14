@@ -1,4 +1,3 @@
-// Intro-Effekt
 window.addEventListener('load', () => {
   const intro = document.querySelector('.intro');
   const introText = document.getElementById('intro-text');
@@ -17,7 +16,6 @@ window.addEventListener('load', () => {
   }, 2500);
 });
 
-// Aufbaueffekt für die Abschnitte
 function revealSections() {
   const sections = document.querySelectorAll('section');
   sections.forEach((section, index) => {
