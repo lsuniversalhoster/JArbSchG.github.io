@@ -12,9 +12,9 @@ window.addEventListener('load', () => {
     intro.style.opacity = '0';
     setTimeout(() => {
       intro.style.display = 'none';
-      revealSections();
+      revealSections(); 
     }, 1000);
-  }, 2500);
+  }, 5000);
 });
 
 function revealSections() {
