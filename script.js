@@ -1,21 +1,17 @@
-// JS Animations
-const sections = document.querySelectorAll('section');
-
-const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.2
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
+function typeWriter(textElement, text, speed) {
+  let i = 0;
+  if (textElement) {
+    function type() {
+      if (i < text.length) {
+        textElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
     }
-  });
-}, options);
+    type();
+  }
+}
 
-sections.forEach(section => {
-  observer.observe(section);
-});
+const purposeText = document.querySelector('#purpose .section-content p');
+const purpose = "Das JArbSchG dient dem Schutz von Jugendlichen...";
+typeWriter(purposeText, purpose, 50);
