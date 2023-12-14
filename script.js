@@ -1,17 +1,11 @@
-function typeWriter(textElement, text, speed) {
-  let i = 0;
-  if (textElement) {
-    function type() {
-      if (i < text.length) {
-        textElement.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, speed);
-      }
-    }
-    type();
-  }
+function revealSections() {
+  const sections = document.querySelectorAll('section');
+  sections.forEach((section, index) => {
+    section.style.opacity = '0';
+    setTimeout(() => {
+      section.style.opacity = '1';
+    }, 500 * index);
+  });
 }
 
-const purposeText = document.querySelector('#purpose .section-content p');
-const purpose = "Das JArbSchG dient dem Schutz von Jugendlichen...";
-typeWriter(purposeText, purpose, 50);
+window.addEventListener('load', revealSections);
