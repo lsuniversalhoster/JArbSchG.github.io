@@ -1,3 +1,4 @@
+/* Allgemeines */
 body,
 ul {
   margin: 0;
@@ -7,6 +8,7 @@ ul {
   color: #333;
 }
 
+/* Header */
 header {
   background-color: #333;
   color: white;
@@ -14,6 +16,7 @@ header {
   padding: 20px 0;
 }
 
+/* Navigation */
 nav {
   background-color: #444;
   text-align: center;
@@ -33,9 +36,9 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.2em;
-  padding: 5px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -43,12 +46,14 @@ nav ul li a:hover {
   color: #333;
 }
 
+/* Abschnitte */
 section {
   background-color: white;
   padding: 40px;
   margin-bottom: 40px;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .section-content {
@@ -69,14 +74,16 @@ p {
   color: #444;
 }
 
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* Credits */
 #credits {
   background-color: #333;
   color: white;
   text-align: center;
   padding: 50px 0;
-}
-
-#credits p {
-  font-style: italic;
-  font-size: 1.2em;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
